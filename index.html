@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+
+
+<style>
+form {
+  /* Center the form on the page */
+  margin: 0 auto;
+  width: 900px;
+  /* Form outline */
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+label {
+  /* Uniform size & alignment */
+  display: inline-block;
+  width: 130px;
+  text-align: right;
+}
+
+input,
+textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+  
+  background-color: #C9DFEC;
+  
+  /* Uniform text field size */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* Match form field borders */
+  border: 1px solid #999;
+}
+
+input:focus,
+textarea:focus {
+  /* Additional highlight for focused elements */
+  border-color: #000;
+}
+
+textarea {
+  /* Align multiline text fields with their labels */
+  vertical-align: top;
+
+  /* Provide space to type some text */
+  height: 5em;
+}
+
+.button {
+  /* Align buttons with the text fields */
+  padding-left: 90px; /* same size as the label elements */
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  margin-left: .5em;
+}
+
+/*make things side by side*/
+#leftbox {
+  float:left;
+  width:50%;
+}
+#rightbox {
+  float:right;
+  width:50%;
+
+/*table border*/
+table, th, td {
+  border: 1px solid black;
+}
+
+ 
+      
+</style>
+
+
+
+<body>
+<form action="/my-handling-form-page" method="post">
+ <ul>
+ <p>
+ <div style="position: relative; width:100%;">
+   CISC 4900/4905, Spring 2022
+   <div style="position: absolute; top: 0; right: 0; width:50%; text-align:right;">
+     Course Permission Request and Student Profile Form
+   </div>
+ </div>
+ </p>
+ <hr>
+ <h2 style="text-align: center;">Major in Computer Science</h2>
+ <p>
+ <span style="color: red; font-weight:bold;">INSTRUCTIONS </span>
+ Please complete this form with a PDF Editor and submit it along with your unofficial transcript to
+ <br>
+ <a href="https://www.dropbox.com/request/1Lthx03CQZyUoyyPbRUD">https://www.dropbox.com/request/1Lthx03CQZyUoyyPbRUD</a>
+ </p>
+ <h3 style="background-color:#d3d3d3;">Student Information</h3>
+  <div id="boxes">
+  <div id="leftbox">
+  <li>
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" first_name="first_name">
+  </li>
+  </div>
+  <div id="rightbox">
+  <li>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" last_name="last_name">
+  </li>
+  </div>
+  <br>
+  <br>
+  <div id="leftbox">
+  <li>
+    <label for="CUNYFirst_ID">CUNYFirst ID:</label>
+    <input type="text" id="CUNYFirst_ID" CUNYFirst_ID="CUNYFirst_ID">
+  </li>
+  </div>
+  <div id="rightbox">
+  <li>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="user_email">
+  </li>
+  </div>
+  <br>
+  <br>
+  <div id="leftbox">
+  <li>
+    <label for="final_semester">Final Semester:</label>
+    <input list="final_semester" name="final_semester">
+    <datalist id="final_semester">
+    <option></option>
+    <option value="Spring 2022">Spring 2022</option>
+    <option value="Summer 2022">Summer 2022</option>
+    <option value="Other">Other</option>
+    </datalist>
+  </li>
+  </div>
+  <div id="rightbox">
+  <li>
+    <label for="major">Major:</label>
+    <input type="text" id="major" name="major">
+  </li>
+  </div>
+  </div>
+  <br>
+  <br>
+
+  
+  <h3 style="background-color:#d3d3d3;">Internship</h3>
+  <p>
+  <strong>INSTRUCTIONS </strong> Check (and complete) one of the following:
+  </p>
+
+  <table style="width:100%;">
+  <tr>
+    <th style="width:10%"></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>
+    <label>
+    option 1
+    <input type="checkbox" checked="checked">
+    </label>
+    </td>
+    <td>
+    1. I will not be part of an internship (and do not expect to find one on my own). I also do not have a project.
+    <br>
+    If you’d like, please briefly describe any areas of particular interest. This might include: a CIS course that you found
+    particularly interesting; work/internship experience; a particular technology or programming language; an application
+    of computer science that interests you.
+    <li>
+    <textarea style="width: 70%;" id="msg" name="user_message"></textarea>
+    </li>
+    <br>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>F</td>
+    <td>
+    2. I will be employed (or have a project) and working with the following during Spring 2022:
+    <br>
+    Fill out this section ONLY if you have already been accepted for an internship, have arranged a project with a faculty
+    member, or have a suitable project at your place of employment.
+    <li>
+      <label for="organization">Agency, Firm, etc:</label>
+      <input type="text" id="organization" name="organization">
+    </li>
+    <li>
+      <label for="supervisor_name">Supervisor Name:</label>
+      <input type="text" id="supervisor_name" name="supervisor_name">
+    </li>
+    <li>
+      <label for="supervisor_email">Supervisor Email:</label>
+      <input type="text" id="supervisor_email" name="supervisor_email">
+    </li>
+    <li>
+      <label for="relationship">Relationship:</label>
+      <input list="relationship" name="relationship">
+      <datalist id="relationship">
+      <option></option>
+      <option value="Academic">Academic</option>
+      <option value="Professional">Professional</option>
+      <option value="Other">Other</option>
+      <option value="None">None</option>
+      </datalist>
+    </li>
+    <li>
+      <label for="description">Brief Description:</label>
+      <textarea style="width: 70%;" id="description" name="description"></textarea>
+    </li>
+    </td>
+  </tr>
+  </table>
+
+
+  <h3 style="background-color:#d3d3d3;">Courses Taken</h3>
+  <p>
+  Please complete the following.
+  <br><br>
+  • If you are currently taking the course, simply supply the instructor, and leave the grade blank;
+  <br><br>
+  • If you haven’t taken the course, leave it blank.
+  <br><br>
+  • If you retook the course, provide the most recent grade and instructor.
+  <br><br>
+  • If you are interested in a particular area for a project (CS or non-CS), please provide any additional relevant courses in the last section, e.g., if you are interested in computational biology, list any biology, chemistry, or other related courses in that section, and explain your interest in the Project Interests section above.
+  </p>
+
+  <table style="width:100%">
+  <tr>
+    <th style="width:12%">Course</th>
+    <th style="width:30%">Title</th>
+    <th style="width:20%">Instructor</th>
+    <th>Grade</th>
+  </tr>
+  <tr>
+    <td>CISC 1115 or <br>CISC 1170</td>
+    <td>Intro to Programming Using Java or <br>Java for Programmers</td>
+    <td><input type="text" id="CISC1115_instructor" name="CISC1115_instructor">
+      <input type="text" id="CISC1170_instructor" name="CISC1170_instructor"></td>
+    <td><input style="width:150px" type="text" id="CISC1115_grade" name="CISC1115_grade">
+      <input style="width:150px" type="text" id="CISC1170_grade" name="CISC1170_grade"></td>
+  </tr>
+  <tr>
+    <td>CISC 2210</td>
+    <td>Discrete Structures</td>
+    <td><input type="text" id="CISC2210_instructor" name="CISC2210_instructor"></td>
+    <td><input style="width:150px" type="text" id="CISC2210_grade" name="CISC2210_grade"></td>
+  </tr>
+  <tr>
+    <td>CISC 3115</td>
+    <td>Introduction to Modern Programming Techniques</td>
+    <td><input type="text" id="CISC3115_instructor" name="CISC3115_instructor"></td>
+    <td><input style="width:150px" type="text" id="CISC3115_grade" name="CISC3115_grade"></td>
+  </tr>
+  <tr>
+    <td>CISC 3130</td>
+    <td>Data Structures</td>
+    <td><input type="text" id="CISC3130_instructor" name="CISC3130_instructor"></td>
+    <td><input style="width:150px" type="text" id="CISC3130_grade" name="CISC3130_grade"></td>
+  </tr>
+  <tr>
+    <td>CISC 3140</td>
+    <td>Design & Implementation of Large-Scale Web Apps</td>
+    <td><input type="text" id="CISC3140_instructor" name="CISC3140_instructor"></td>
+    <td><input style="width:150px" type="text" id="CISC3140_grade" name="CISC3140_grade"></td>
+  </tr>
+  <tr>
+    <td>CISC 3142</td>
+    <td>Programming paradigms in C++</td>
+    <td><input type="text" id="CISC3142_instructor" name="CISC3142_instructor"></td>
+    <td><input style="width:150px" type="text" id="CISC3142_grade" name="CISC3142_grade"></td>
+  </tr>
+  <tr>
+    <td>CISC 3220 or <br>CISC 3230</td>
+    <td>Analysis of Algorithms or <br>Theoretical Computer Science</td>
+    <td><input type="text" id="CISC3220_instructor" name="CISC3220_instructor">
+      <input type="text" id="CISC3230_instructor" name="CISC3230_instructor"></td>
+    <td><input style="width:150px" type="text" id="CISC3220_grade" name="CISC3220_grade">
+      <input style="width:150px" type="text" id="CISC3230_grade" name="CISC3230_grade"></td>
+  </tr>
+  <tr>
+    <td>CISC 3305 or <br>CISC 3310</td>
+    <td>Computer Organization or <br>Principles of Computer Architecture</td>
+    <td><input type="text" id="CISC3305_instructor" name="CISC3305_instructor">
+      <input type="text" id="CISC3310_instructor" name="CISC3310_instructor"></td>
+    <td><input style="width:150px" type="text" id="CISC3305_grade" name="CISC3305_grade">
+      <input style="width:150px" type="text" id="CISC3310_grade" name="CISC3310_grade"></td>
+  </tr>
+  <tr>
+    <td>CISC 3320</td>
+    <td>Operating Systems</td>
+    <td><input type="text" id="CISC3320_instructor" name="CISC3320_instructor"></td>
+    <td><input style="width:150px" type="text" id="CISC3320_grade" name="CISC3320_grade"></td>
+  </tr>
+  <tr>
+    <td>CISC 4900 or <br>CISC 5001</td>
+    <td>Independent and Group Projects I or <br>Independent Study and Research I</td>
+    <td><input type="text" id="CISC4900_instructor" name="CISC4900_instructor">
+      <input type="text" id="CISC5001_instructor" name="CISC5001_instructor"></td>
+    <td><input style="width:150px" type="text" id="CISC4900_grade" name="CISC4900_grade">
+      <input style="width:150px" type="text" id="CISC5001_grade" name="CISC5001_grade"></td>
+  </tr>
+  </table>
+
+  <h3 style="background-color:#d3d3d3;">Other required courses</h3>
+  <br>
+  <table style="width:100%">
+  <tr>
+    <th style="width:12%">Course</th>
+    <th style="width:30%">Title</th>
+    <th style="width:20%">Instructor</th>
+    <th>Grade</th>
+  </tr>
+  <tr>
+    <td>CISC 2820W or <br>CISC 3318W</td>
+    <td>Computers and Ethics or <br>Computers and Ethics</td>
+    <td><input type="text" id="CISC2820W_instructor" name="CISC2820W_instructor">
+      <input type="text" id="CISC3318W_instructor" name="CISC3318W_instructor"></td>
+    <td><input style="width:150px" type="text" id="CISC2820W_grade" name="CISC2820W_grade">
+      <input style="width:150px" type="text" id="CISC3318W_grade" name="CISC3318W_grade"></td>
+  </tr>
+  <tr>
+    <td>Math 1201</td>
+    <td>Calculus I</td>
+    <td><input type="text" id="Math1201_instructor" name="Math1201_instructor"></td>
+    <td><input style="width:150px" type="text" id="Math1201_grade" name="Math1201_grade"></td>
+  </tr>
+  <tr>
+    <td>Math 1206</td>
+    <td>Calculus II</td>
+    <td><input type="text" id="Math1206_instructor" name="Math1206_instructor"></td>
+    <td><input style="width:150px" type="text" id="Math1206_grade" name="Math1206_grade"></td>
+  </tr>
+  <tr>
+    <td>Math 2501 or <br>Math 3501</td>
+    <td>Elementary Probability & Statistics or <br>Probability & Statistics I</td>
+    <td><input type="text" id="Math2501_instructor" name="Math2501_instructor">
+      <input type="text" id="Math3501_instructor" name="Math3501_instructor"></td>
+    <td><input style="width:150px" type="text" id="Math2501_grade" name="Math2501_grade">
+      <input style="width:150px" type="text" id="Math3501_grade" name="Math3501_grade"></td>
+  </tr>
+  </table>
+  <h3 style="background-color:#d3d3d3;">Three additional CIS courses numbered between 3000 and 4899</h3>
+  <br>
+  <table style="width:100%">
+  <tr>
+    <th style="width:12%">Course</th>
+    <th style="width:30%">Title</th>
+    <th style="width:20%">Instructor</th>
+    <th>Grade</th>
+  </tr>
+    <td>CISC <input style="width:150px" type="text" id="CISC1" name="CISC1"></td>
+    <td><input type="text" id="CISCtitle1" name="CISCtitle1"></td>
+    <td><input type="text" id="CISC1instructor" name="CISC1instructor"></td>
+    <td><input style="width:150px" type="text" id="CISC1grade" name="CISC1grade"></td>
+  </tr>
+  </table>
+  <h3 style="background-color:#d3d3d3;">Other ’Relevant’ (CIS and non-CIS) Courses</h3>
+  
+  
+
+
+  <li class="button">
+  <button type="submit">Submit</button>
+  </li>
+ </ul>
+</form>
+
+</body>
+</html>
