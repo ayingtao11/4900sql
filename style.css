@@ -35,8 +35,7 @@ textarea {
   background-color: #C9DFEC;
   
   /* Uniform text field size */
-  width: 300px;
-  height: 5em;
+
   box-sizing: border-box;
 
   /* Match form field borders */
@@ -54,7 +53,7 @@ textarea {
   vertical-align: top;
 
   /* Provide space to type some text */
-  height: 5em;
+  
 }
 
 .button {
